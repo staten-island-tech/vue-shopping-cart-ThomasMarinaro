@@ -10,12 +10,13 @@
 
 <style>
 #app {
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: white;
-  background-color:purple;
+  color: black;
+  background-color:white;
 }
 
 #nav {
@@ -30,4 +31,9 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+#items {
+  display:flex;
+  background-color:red;
+}
 </style>
+
