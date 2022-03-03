@@ -22,16 +22,19 @@
     <h1> the audi quattro </h1>
     <p> The german group b machine sometimes they can have a little fun </p>
     <img src="https://c4.wallpaperflare.com/wallpaper/373/72/25/audi-ur-quattro-audi-drifting-wallpaper-preview.jpg" alt="rs200">
-  </div>
+    <button>450000 credits</button>
+    </div>
   <div class="items" id="carrera">
     <h1> The 1973 911 carrera</h1>
     <p>this porsche is ready to rumble with a classic livery and a tried and true 911 body</p>
     <img src="https://silodrome.com/wp-content/uploads/2017/08/Porsche-911-Carrera-RS-2.7-1480x988.jpg" alt="carrera">
+    <button class="button" id="gimme carrera"> 350000 credits</button>
     </div>
     <div class="items" id="celica">
     <h1> The 1994 celica </h1>
     <p>this toyota beauty proved 10 years later rally was not dead</p>
     <img src="https://i.pinimg.com/originals/5f/3f/46/5f3f4694f56c5f3a40319df79eb7d399.jpg" alt="celica">
+    <button id="gimme toyota">350000 credits  </button>
     </div> 
   </div>
  </div>
@@ -43,10 +46,7 @@
 </script>
 
 <style>
-.home{
-  
 
-}
 .things{
   display: flex;
   flex-direction: row;
