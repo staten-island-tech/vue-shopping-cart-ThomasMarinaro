@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>fake cars </h1>
+ <body>
   <h1>gta cars </h1>
   <div class="btn">  
     <button id="setting" type="button"> setting</button>
@@ -9,11 +10,23 @@
     <button id="sports" type="button">Sports</button>
     <button id="Offroad" type="button">Offroad</button>
   </div>
+    <section class="box" id="box"> 
+    
 
+    </section>
+ </body>
   </div>
 </template>
 <script>
-
+let DOMSelectors = {
+  _card: document.getElementById("box"),
+  get card() {
+    return this._card;
+  },
+  set card(value) {
+    this._card=value;
+  },
+};
 const GtaCars = [
     {
         Name: "Sultan",
@@ -103,6 +116,25 @@ const GtaCars = [
         fourDoor:false,
         methodOfObtaining:["Legendary Motorsports"],
         topSpeed:117.75,
-        }
-]
+        }]
+
+  GtaCars.forEach((GtaCars)=>{
+    
+    console.log("imhere"),
+    document.getElementById("box").insertAdjacentHTML("beforeend",`
+    
+    
+    <div class= "card">
+    <h1 class="Name"> ${GtaCars.Manufacturer} ${GtaCars.Name} </h1>
+    <img class="pic" src="${GtaCars.Image}" alt="pic"> </img> 
+    <h2 class="Class"> ${GtaCars.Class} price:${GtaCars.price}</h2>
+    </div>
+    
+    
+    `);
+    
+    
+});  
+
+
 </script>
