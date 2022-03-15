@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>fake cars</h1>
+    <button class=""> </button>
     <body>
       <h1>game cars</h1>
 
@@ -29,13 +30,20 @@ export default {
         {
           name: "munroe",
           manufacturers: "pegassi",
+          
         },
+       
       ],
       cart:[]
     };
   },
   methods:{
-    
+   methods: {
+    addToCart(product) {
+      this.cart.push(product);
+    },ethods: {
+
+    },
 
   }
 };
