@@ -3,7 +3,7 @@
  <h1>the proverbial door</h1> 
  <img src="https://media2.giphy.com/avatars/julianeasily/XgpXIhg4pL5V.gif" alt="someone stole this cat">
   <h2>welcome to my store  </h2>
-
+  
   <h1> Buy my cars</h1>
  
   <div class="things">  
@@ -22,7 +22,7 @@
     <h1> the audi quattro </h1>
     <p> The german group b machine sometimes they can have a little fun </p>
     <img src="https://c4.wallpaperflare.com/wallpaper/373/72/25/audi-ur-quattro-audi-drifting-wallpaper-preview.jpg" alt="rs200">
-    <button>450000 credits</button>
+    <button @click="quattro">450000 credits</button>
     </div>
   <div class="items" id="carrera">
     <h1> The 1973 911 carrera</h1>
@@ -42,14 +42,21 @@
 
 
 <script>
+money:1000000
 
+ methods: {
+    quattro() 
+    {this.bv    b          
+  } 
+
+  }
 </script>
 
 <style>
 
 .things{
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   margin-right: 100px;
   margin-left: 100px;
   flex-grow:1;

@@ -6,8 +6,12 @@
       <h1>game cars</h1>
 
       <section class="box" id="box" v-for="car in cars" :key="car">
-        <h1>{{ car.name }} by {{ car.manufacturers }}</h1>
-        <h2>also known as the {{ car.realname }}</h2>
+        <h1>{{ car.product }} by {{ car.customer }}</h1>
+        <h2>also known as the {{ car.product }}</h2>
+          <h1>{{ queue.product }} by {{ queue.customer }}</h1>
+        <h2>also known as the {{ queue.product }}</h2>
+            <button @click="queuecars">work</button>
+
       </section>
     </body>
   </div>
@@ -17,61 +21,51 @@
 export default {
   name: "about",
   components: {},
-  data() {
+    data() {
     return {
-      cars: [
-        {
-          name: "calicogtf",
-          location: "SSAA",
-          manufacturers: "karin",
-          realname: "celica",
-          price: 1489000,
-        },
-        {
-          name: "munroe",
-          manufacturers: "pegassi",
-          
-        },
-       
-      ],
-      cart:[]
+      queue: [{
+      }],
+
+     
+      ]
     };
   },
-  methods:{
-   methods: {
-    addToCart(product) {
-      this.cart.push(product);
-    },ethods: {
-
-    },
-
+  methods: {
+    queuecars() {
+      this.push(this.cars.product);
+    }
   }
+  // data() {
+  //   return {
+  //     cars: [
+  //       {
+  //         name: "calicogtf",
+  //         location: "SSAA",
+  //         manufacturers: "karin",
+  //         realname: "celica",
+  //         price: 1489000,
+  //       },
+  //       { 
+  //         manufacturers: "pegassi",
+          
+  //       },
+       
+  //     ],
+  //     cart:[]
+  //   };
+  // },
+  
+  // methods:{
+  //  methods: {
+  //   addToCart(this.cart) {
+  //     this.cart.push(this.cars.name);
+  //   }
+  //   },
+
+  // }
 };
 </script>
 <style>
-.box {
-  display: flex;
-  flex-direction: row;
-  margin-right: 100px;
-  margin-left: 100px;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  background-color: blue;
-}
-h1 {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 
-  background-repeat: true;
-  flex-grow: 1;
-  flex-shrink: 1;
-  scale: 0.8;
-  align-items: flex-start;
-}
-img {
-  padding: 30px;
-  flex-shrink: 1;
-  max-width: 40em;
-}
+  
 </style>
