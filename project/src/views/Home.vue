@@ -5,7 +5,7 @@
   <h2>welcome to my store  </h2>
   
   <h1> Buy my cars</h1>
- 
+ <h2>{{money}} credits <h2>
   <div class="things">  
     <div class="items" id="ferrari">
     <h1> The F40 competizione</h1>
@@ -42,9 +42,18 @@
 
 
 <script>
-money:1000000
-
-  
+export default{
+  data(){
+    return {
+      money:1000000
+    }
+  },
+  methods: {
+    quattro:function (){
+      this.money -= 350000;
+    }
+  }
+}
 </script>
 
 <style>
