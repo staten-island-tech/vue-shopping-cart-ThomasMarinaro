@@ -3,8 +3,6 @@
     <div id="nav">
       <router-link to="/">Rally Cars</router-link> |
       <router-link to="/about">About</router-link>
-      <router-link to="/work">pls</router-link>
-
     </div>
     <router-view/>
   </div>
