@@ -44,12 +44,7 @@
 <script>
 money:1000000
 
- methods: {
-    quattro() 
-    {this.bv    b          
-  } 
-
-  }
+  
 </script>
 
 <style>
