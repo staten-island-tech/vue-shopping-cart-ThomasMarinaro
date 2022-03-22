@@ -6,8 +6,11 @@
   <div> 
     <h1> welcome to my store you have {{money}}</h1>
     <h2 v-if="isShow"> you got an audi</h2>
+    <h2 v-if="willShow"> you got a celica</h2>
+    <h2 v-if="canShow"> you got a carrera</h2>
+
   </div>
-  <h1> Buy qmy cars</h1>
+  <h1> Buy  my cars</h1>
  
   <div class="things">  
     <div class="items" id="ferrari">
@@ -25,20 +28,22 @@
     <h1> the audi quattro </h1>
     <p> The german group b machine sometimes they can have a little fun </p>
     <img src="https://c4.wallpaperflare.com/wallpaper/373/72/25/audi-ur-quattro-audi-drifting-wallpaper-preview.jpg" alt="rs200">
-    <button @click="quattro">450000 credits to cart</button>
+    <button @click="quattro" >450000 credits to cart</button>
     <button @click="quattrorefund" v-if="isShow">refund</button>
     </div>
   <div class="items" id="carrera">
     <h1> The 1973 911 carrera</h1>
     <p>this porsche is ready to rumble with a classic livery and a tried and true 911 body</p>
     <img src="https://silodrome.com/wp-content/uploads/2017/08/Porsche-911-Carrera-RS-2.7-1480x988.jpg" alt="carrera">
-    <button class="button" id="gimme carrera"> 350000 credits</button>
+    <button @click="carrera" id="gimme carrera"> 350000 credits</button>
     </div>
     <div class="items" id="celica">
     <h1> The 1994 celica </h1>
     <p>this toyota beauty proved 10 years later rally was not dead</p>
     <img src="https://i.pinimg.com/originals/5f/3f/46/5f3f4694f56c5f3a40319df79eb7d399.jpg" alt="celica">
-    <button id="gimme toyota">350000 credits  </button>
+    <button @click="celica" id="gimme toyota">350000 credits  </button>
+    <button @click="celicarefund" v-if="willShow">refund</button>
+
     </div> 
   </div>
  </div>
@@ -52,26 +57,51 @@ export default{
       money:1000000,
       showmoney:1,
       isShow: false,
+      willShow:false,
+      canShow:false,
+      
     }
+
   },
   methods: {
     quattro:function (){
       
       this.showmoney+= 1;
-      this.isShow = true
-      this.money -=450000
+      this.isShow = true,
+      this.money -=450000,
       alert('you have ' + this.money)
-    },
+      this.willShow = false
+    },  
     quattrorefund:function (){
     
-      this.money += 450000
-      this.isShow = false
+      this.money += 450000,
+      this.isShow = false,
       alert('you have ' + this.money)
-    }
+    },
+    celica:function (){
+      this.willShow = true,
+      this.money -= 450000,
+      alert('you have ' + this.money)
+    },
+    celicarefund:function (){
     
-    }
-    }
-       
+      this.money += 450000,
+      this.willShow = false,
+      alert('you have ' + this.money)
+    },
+    carrera:function (){
+      this.canShow = true,
+      this.money -= 450000,
+      alert('you have ' + this.money)
+    },
+    carrerarefund:function (){
+    
+      this.money += 450000,
+      this.canShow = false,
+      alert('you have ' + this.money)
+    },
+}
+}
 
 
   
