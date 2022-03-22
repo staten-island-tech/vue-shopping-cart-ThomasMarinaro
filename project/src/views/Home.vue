@@ -2,9 +2,12 @@
   <div class="home">
  <h1>the proverbial door</h1> 
  <img src="https://media2.giphy.com/avatars/julianeasily/XgpXIhg4pL5V.gif" alt="someone stole this cat">
-  <h2>welcome to my store  </h2>
   
-  <h1> Buy my cars</h1>
+  <div> 
+    <h1> welcome to my store you have {{money}}</h1>
+    <h2 v-if="isShow"> you got an audi</h2>
+  </div>
+  <h1> Buy qmy cars</h1>
  
   <div class="things">  
     <div class="items" id="ferrari">
@@ -22,7 +25,8 @@
     <h1> the audi quattro </h1>
     <p> The german group b machine sometimes they can have a little fun </p>
     <img src="https://c4.wallpaperflare.com/wallpaper/373/72/25/audi-ur-quattro-audi-drifting-wallpaper-preview.jpg" alt="rs200">
-    <button @click="quattro">450000 credits</button>
+    <button @click="quattro">450000 credits to cart</button>
+    <button @click="quattrorefund" v-if="isShow">refund</button>
     </div>
   <div class="items" id="carrera">
     <h1> The 1973 911 carrera</h1>
@@ -42,7 +46,33 @@
 
 
 <script>
-money:1000000
+export default{
+  data(){
+    return {
+      money:1000000,
+      showmoney:1,
+      isShow: false,
+    }
+  },
+  methods: {
+    quattro:function (){
+      
+      this.showmoney+= 1;
+      this.isShow = true
+      this.money -=450000
+      alert('you have ' + this.money)
+    },
+    quattrorefund:function (){
+    
+      this.money += 450000
+      this.isShow = false
+      alert('you have ' + this.money)
+    }
+    
+    }
+    }
+       
+
 
   
 </script>

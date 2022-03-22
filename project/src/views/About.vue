@@ -27,33 +27,31 @@ export default {
       }],
 
      
-      ]
+      
     };
   },
   methods: {
     queuecars() {
       this.push(this.cars.product);
     }
-  }
+  },
   // data() {
   //   return {
-  //     cars: [
-  //       {
-  //         name: "calicogtf",
-  //         location: "SSAA",
-  //         manufacturers: "karin",
-  //         realname: "celica",
-  //         price: 1489000,
-  //       },
-  //       { 
-  //         manufacturers: "pegassi",
+    
+      cars: [
+        {
+          name: "calicogtf",
+          location: "SSAA",
+          manufacturers: "karin",
+          realname: "celica",
+          prices: 1489000,
+        },
+        { 
+          manufacturers: "pegassi",
           
-  //       },
+        },
        
-  //     ],
-  //     cart:[]
-  //   };
-  // },
+      ],
   
   // methods:{
   //  methods: {
