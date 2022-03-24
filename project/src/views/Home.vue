@@ -17,11 +17,14 @@
     <h1> The F40 competizione</h1>
     <p>this ferrari is not for keeping in a garage but it has been let this caged tiger out</p>
     <img src="https://www.supercars.net/blog/wp-content/uploads/2019/10/JcQ9GNJ7REKQFiVJzXmmTA.jpg" alt="ferrari">
+    <button @click="ferrarifund" v-if="wannaShow"> refund</button>
     </div>
     <div class="items" id="rs200">
     <h1> ford rs200 </h1>
     <p> this beaut is packing a cosworth engine so good i should not be selling </p>
     <img src="https://images.cdn.circlesix.co/image/1/700/0/uploads/posts/2016/03/f4c48dff4244772e8c9562f694204a02.jpg" alt="rs200"> 
+    <button @click="rs200refund" v-if="mightShow"> refund</button>
+    <button @click="rs200" v-else  > 450000</button>
 </div>
 
    <div class="items" id="audi">
@@ -36,6 +39,7 @@
     <p>this porsche is ready to rumble with a classic livery and a tried and true 911 body</p>
     <img src="https://silodrome.com/wp-content/uploads/2017/08/Porsche-911-Carrera-RS-2.7-1480x988.jpg" alt="carrera">
     <button @click="carrera" id="gimme carrera"> 350000 credits</button>
+    <button @click="carrerarefund" v-if="canShow"> refund</button>
     </div>
     <div class="items" id="celica">
     <h1> The 1994 celica </h1>
@@ -51,15 +55,17 @@
 
 
 <script>
-export default{
+export default {
   data(){
+
     return {
       money:1000000,
       showmoney:1,
       isShow: false,
       willShow:false,
       canShow:false,
-      
+      mightShow:false,
+      wannaShow:false,
     }
 
   },
@@ -100,6 +106,32 @@ export default{
       this.canShow = false,
       alert('you have ' + this.money)
     },
+     ferrari:function (){
+      
+      this.showmoney+= 1;
+      this.wannaShow = true,
+      this.money -=450000,
+      alert('you have ' + this.money)
+      
+    },  
+    ferrarirefund:function (){
+    
+      this.money += 450000,
+      this.wannaShow = false,
+      alert('you have ' + this.money)
+    },
+    rs200:function (){
+      this.mightShow = true,
+      this.money -= 450000,
+      alert('you have ' + this.money)
+    },
+    rs200refund:function (){
+    
+      this.money += 450000,
+      this.mightShow = false,
+      alert('you have ' + this.money)
+    },
+ 
 }
 }
 
